@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-container" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zircky.mylauncher.controller.MainLayoutController">
+
+    <top>
+        <HBox fx:id="titleBar" styleClass="title-bar">
+            <padding>
+                <Insets bottom="0" left="12" right="0" top="0" />
+            </padding>
+
+            <Label styleClass="title-bar-label" text="MyLauncher" />
+            <Region HBox.hgrow="ALWAYS" />
+         <ButtonBar prefHeight="40.0" prefWidth="200.0">
+           <buttons>
+             <Button fx:id="minimizeButton" mnemonicParsing="false" onAction="#onMinimizeClicked" styleClass="window-button" text="—" />
+               <Button fx:id="maximizeButton" mnemonicParsing="false" onAction="#onMaximizeClicked" styleClass="window-button" text="□" />
+               <Button fx:id="closeButton" mnemonicParsing="false" onAction="#onCloseClicked" styleClass="window-button-close" text="✕" />
+           </buttons>
+         </ButtonBar>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sidebar" maxWidth="260.0" minWidth="260.0" prefWidth="260.0" styleClass="sidebar">
+
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="20" />
+            </padding>
+
+            <VBox spacing="4">
+                <Label styleClass="logo-title" text="MINECRAFT" />
+                <Label styleClass="logo-subtitle" text="LAUNCHER" />
+            </VBox>
+
+            <VBox fx:id="menuContainer" spacing="8" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="24" left="0" right="0" top="24" />
+                </padding>
+            </VBox>
+
+            <VBox spacing="12">
+                <HBox spacing="12" styleClass="profile-card">
+                    <StackPane prefHeight="42" prefWidth="42" styleClass="avatar-box">
+                        <Label styleClass="avatar-text" text="Z" />
+                    </StackPane>
+
+                    <VBox spacing="2">
+                        <Label styleClass="profile-name" text="Игрок" />
+                        <Label styleClass="profile-status" text="● Онлайн" />
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS" />
+
+                    <Label styleClass="profile-arrow" text="⌄" />
+                </HBox>
+
+                <HBox spacing="18" styleClass="social-row">
+                    <Label styleClass="social-icon" text="🎮" />
+                    <Label styleClass="social-icon" text="🌐" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </left>
+   <center>
+      <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+               <Label styleClass="content-placeholder" text="Контентная область" />
+         </children>
+      </StackPane>
+   </center>
+
+</BorderPane>
